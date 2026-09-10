@@ -3,6 +3,8 @@
 .piolibdeps/
 .platformio/
 
+.pio/
+
 # Build outputs
 .build/
 dist/
