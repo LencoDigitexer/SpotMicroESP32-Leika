@@ -1,25 +1,41 @@
 ```
-# PlatformIO build artifacts
-.piolibdeps/
-.platformio/
-
-# Build outputs
-.build/
-dist/
-build/
-
-# IDE
-.vscode/
-.idea/
-
-# Logs
+# ESP-IDF specific ignores
+sdkconfig
 *.log
-
-# Environment
-.env
-.env.local
-*.env.*
+*.bin
+*.elf
+*.map
+build/
+dist/
+*.db
+*.gdb
+*.lock
+*.tmp
 
 # Dependencies
-node_modules/
+components/**/build/
+components/**/dist/
+
+# General ignores
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.local
+.env.*
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# MyPy
+.mypy_cache/
 ```
