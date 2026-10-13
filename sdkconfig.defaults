@@ -54,5 +54,14 @@ CONFIG_FATFS_LFN_STACK=y
 
 CONFIG_IDF_EXPERIMENTAL_FEATURES=y
 CONFIG_IDF_TARGET_ESP32S3=y
-# Принудительно используем legacy драйвер I2C для совместимости со старым кодом
-CONFIG_DRIVER_I2C_LEGACY=y
+
+# I2C: проект использует НОВЫЙ (NG) драйвер (driver/i2c_master.h, i2c_master_bus_*).
+# Старый legacy-драйвер запрещён, иначе на старте возникает
+# "CONFLICT! driver_ng is not allowed to be used with this old driver" и reboot loop.
+# В ESP-IDF 5.3 конфликт проверяется при вызове i2c_param_config() (старый API),
+# поэтому достаточно НЕ использовать старый драйвер в коде.
+# CONFIG_DRIVER_I2C_LEGACY is not set
+
+# Bluetooth: в данном проекте НЕ включается (см. README ниже):
+# прошивка не содержит BLE/NimBLE стека, подключение к роботу возможно только по Wi-Fi/USB.
+# CONFIG_BT_ENABLED is not set
