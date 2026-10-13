@@ -36,8 +36,16 @@ CONFIG_COMPILER_OPTIMIZATION_PERF=y
 CONFIG_DRIVER_I2C_NG=y
 # CONFIG_DRIVER_I2C_LEGACY is not set
 
-# Partition table
+# Partition table (custom CSV is provided via board_build.partitions in platformio.ini)
 CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# Flash size for ESP32-S3-DevKitC-1 N16R8 (16 MB)
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
+
+# Wi-Fi: enable SoftAP so the access point shows up after flashing
+CONFIG_ESP_WIFI_SOFTAP_SUPPORT=y
 
 # CONFIG_FATFS_LFN_NONE is not set
 # CONFIG_FATFS_LFN_HEAP is not set
