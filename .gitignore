@@ -1,10 +1,13 @@
 ```
-# ESP-IDF specific ignores
-sdkconfig
-*.log
-*.bin
-*.elf
-*.map
+# PlatformIO build artifacts
+.piolibdeps/
+.platformio/
+
+.pio/
+
+# Build outputs
+.build/
+dist/
 build/
 dist/
 *.db
